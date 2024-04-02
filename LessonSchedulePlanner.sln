@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonSchedulePlanner.Andro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonSchedulePlanner.iOS", "src\LessonSchedulePlanner.iOS\LessonSchedulePlanner.iOS.csproj", "{FDFC899A-3DC0-4A82-8BAB-82022E0560DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonSchedulePlanner", "src\LessonSchedulePlanner\LessonSchedulePlanner.csproj", "{96C44C5D-9C0E-49FF-9745-1B273A321E89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonSchedulePlanner", "src\LessonSchedulePlanner\LessonSchedulePlanner.csproj", "{96C44C5D-9C0E-49FF-9745-1B273A321E89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

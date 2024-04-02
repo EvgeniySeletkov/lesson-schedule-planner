@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns:views="clr-namespace:LessonSchedulePlanner.Views"
+                       xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       x:Class="LessonSchedulePlanner.Views.SchedulePage"
+                       BackgroundColor="#ecf0f1">
+
+    <Grid RowDefinitions="56, *"
+          RowSpacing="0"
+          ColumnSpacing="0">
+
+        <Grid Grid.Row="0"
+              RowDefinitions="*, Auto"
+              RowSpacing="0"
+              ColumnSpacing="0">
+
+            <Label Text="Schedule"
+                   FontFamily="Font500"
+                   FontSize="16"
+                   TextColor="#000000"
+                   LineBreakMode="TailTruncation"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Margin="16, 0"/>
+
+            <BoxView Grid.Row="1" HeightRequest="1"
+                     BackgroundColor="#bdc3c7"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1"
+              RowSpacing="0"
+              ColumnSpacing="0">
+
+            <CollectionView x:Name="list"
+                            SelectionMode="None">
+
+                <CollectionView.Header>
+
+                    <Grid RowSpacing="0"
+                          ColumnSpacing="0"
+                          HeightRequest="48"
+                          Padding="16, 0">
+
+                        <Label Text="Monday"
+                               FontFamily="Font500"
+                               FontSize="16"
+                               TextColor="#000000"
+                               LineBreakMode="TailTruncation"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"/>
+
+                        <Label Text="April 2"
+                               FontFamily="Font700"
+                               FontSize="14"
+                               TextColor="#000000"
+                               LineBreakMode="TailTruncation"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"/>
+
+                    </Grid>
+
+                </CollectionView.Header>
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <StackLayout Spacing="0"
+                                     Padding="16, 4">
+
+                            <Frame Padding="0"
+                                   HasShadow="False"
+                                   HeightRequest="48"
+                                   CornerRadius="8"
+                                   BackgroundColor="#3498db">
+
+                                <StackLayout Margin="8, 0" VerticalOptions="Center"
+                                             Spacing="0">
+
+                                    <Label Text="Math"
+                                           FontFamily="Font700"
+                                           FontSize="14"
+                                           TextColor="#ecf0f1"
+                                           MaxLines="1"
+                                           LineBreakMode="TailTruncation"/>
+
+                                    <Label Text="8:00 - 8:40"
+                                           FontFamily="Font400"
+                                           FontSize="14"
+                                           TextColor="#ecf0f1"/>
+
+                                </StackLayout>
+                                
+                            </Frame>
+                            
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                    
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+
+            <Button ImageSource="ic_plus"
+                    HeightRequest="64"
+                    WidthRequest="64"
+                    CornerRadius="32"
+                    BackgroundColor="#3498db"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Margin="16"/>
+
+        </Grid>
+        
+    </Grid>
+    
+</views:BaseContentPage>
