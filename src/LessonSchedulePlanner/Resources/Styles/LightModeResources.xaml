@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="LessonSchedulePlanner.Resources.Styles.LightModeResources">
+
+    <Color x:Key="primaryColor">#ff3498db</Color>
+    <Color x:Key="primaryPressedColor">#ff2872a5</Color>
+    <Color x:Key="backgroundColor">#ffecf0f1</Color>
+    <Color x:Key="backgroundVariantColor">#bfecf0f1</Color>
+    <Color x:Key="separatorColor">#ffbdc3c7</Color>
+    <Color x:Key="titleColor">#ff000000</Color>
+    <Color x:Key="whiteColor">#ffecf0f1</Color>
+    <Color x:Key="blackColor">#ff000000</Color>
+
+    <!--<Color x:Key="primaryColor">#ff2980b9</Color>
+    <Color x:Key="primaryPressedColor">#ff225f8b</Color>
+    <Color x:Key="backgroundColor">#ff2c3e50</Color>
+    <Color x:Key="backgroundVariantColor">#bf2c3e50</Color>
+    <Color x:Key="separatorColor">#ff34495e</Color>
+    <Color x:Key="titleColor">#ffecf0f1</Color>
+    <Color x:Key="whiteColor">#ffecf0f1</Color>
+    <Color x:Key="blackColor">#ff000000</Color>-->
+
+</ResourceDictionary>

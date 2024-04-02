@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="LessonSchedulePlanner.Resources.Styles.DefaultResources">
+
+    <!-- HEIGHTS -->
+    <x:Double x:Key="height1">1</x:Double>
+    <x:Double x:Key="height48">48</x:Double>
+    <x:Double x:Key="height64">64</x:Double>
+    <x:Double x:Key="height80">80</x:Double>
+    
+    <!-- SPACINGS -->
+    <x:Double x:Key="spacing0">0</x:Double>
+
+    <!-- RADIUSES -->
+    <x:Single x:Key="radius8">8</x:Single>
+    <x:Int32 x:Key="radius32">32</x:Int32>
+
+    <!-- FONT SIZES -->
+    <x:Double x:Key="fontSize14">16</x:Double>
+    <x:Double x:Key="fontSize16">16</x:Double>
+
+</ResourceDictionary>

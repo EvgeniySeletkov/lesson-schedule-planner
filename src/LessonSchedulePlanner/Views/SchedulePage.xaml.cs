@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using LessonSchedulePlanner.ViewModels;
 
 namespace LessonSchedulePlanner.Views
 {
@@ -7,18 +7,6 @@ namespace LessonSchedulePlanner.Views
         public SchedulePage()
         {
             InitializeComponent();
-
-            list.ItemsSource = new List<string>
-            {
-                "string",
-                "string",
-                "string",
-                "string",
-                "string",
-                "string",
-                "string",
-                "string",
-            };
         }
     }
 }

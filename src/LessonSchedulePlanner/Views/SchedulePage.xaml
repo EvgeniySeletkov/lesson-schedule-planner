@@ -2,8 +2,12 @@
 <views:BaseContentPage xmlns:views="clr-namespace:LessonSchedulePlanner.Views"
                        xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:strings="clr-namespace:LessonSchedulePlanner.Resources.Strings"
+                       xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+                       xmlns:viewmodels="clr-namespace:LessonSchedulePlanner.ViewModels"
                        x:Class="LessonSchedulePlanner.Views.SchedulePage"
-                       BackgroundColor="#ecf0f1">
+                       x:DataType="viewmodels:SchedulePageViewModel"
+                       BackgroundColor="{DynamicResource backgroundColor}">
 
     <Grid RowDefinitions="56, *"
           RowSpacing="0"
@@ -11,54 +15,35 @@
 
         <Grid Grid.Row="0"
               RowDefinitions="*, Auto"
-              RowSpacing="0"
-              ColumnSpacing="0">
+              RowSpacing="{DynamicResource spacing0}"
+              ColumnSpacing="{DynamicResource spacing0}">
 
-            <Label Text="Schedule"
+            <Label Text="{Static strings:Strings.Schedule}"
                    FontFamily="Font500"
-                   FontSize="16"
-                   TextColor="#000000"
+                   FontSize="{DynamicResource fontSize16}"
+                   TextColor="{DynamicResource titleColor}"
                    LineBreakMode="TailTruncation"
                    VerticalOptions="Center"
                    HorizontalOptions="Start"
                    Margin="16, 0"/>
 
-            <BoxView Grid.Row="1" HeightRequest="1"
-                     BackgroundColor="#bdc3c7"/>
+            <BoxView Grid.Row="1"
+                     HeightRequest="{DynamicResource height1}"
+                     BackgroundColor="{DynamicResource separatorColor}"/>
 
         </Grid>
 
         <Grid Grid.Row="1"
-              RowSpacing="0"
-              ColumnSpacing="0">
+              RowSpacing="{DynamicResource spacing0}"
+              ColumnSpacing="{DynamicResource spacing0}">
 
-            <CollectionView x:Name="list"
+            <CollectionView ItemsSource="{Binding Lessons}"
                             SelectionMode="None">
 
                 <CollectionView.Header>
 
-                    <Grid RowSpacing="0"
-                          ColumnSpacing="0"
-                          HeightRequest="48"
-                          Padding="16, 0">
-
-                        <Label Text="Monday"
-                               FontFamily="Font500"
-                               FontSize="16"
-                               TextColor="#000000"
-                               LineBreakMode="TailTruncation"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Start"/>
-
-                        <Label Text="April 2"
-                               FontFamily="Font700"
-                               FontSize="14"
-                               TextColor="#000000"
-                               LineBreakMode="TailTruncation"
-                               VerticalOptions="Center"
-                               HorizontalOptions="End"/>
-
-                    </Grid>
+                    <StackLayout Spacing="{DynamicResource spacing0}"
+                                 HeightRequest="{DynamicResource height48}"/>
 
                 </CollectionView.Header>
 
@@ -66,50 +51,87 @@
 
                     <DataTemplate>
 
-                        <StackLayout Spacing="0"
+                        <StackLayout Spacing="{DynamicResource spacing0}"
                                      Padding="16, 4">
 
-                            <Frame Padding="0"
-                                   HasShadow="False"
-                                   HeightRequest="48"
-                                   CornerRadius="8"
-                                   BackgroundColor="#3498db">
+                            <material:MaterialCard Padding="0"
+                                                   HeightRequest="{DynamicResource height48}"
+                                                   CornerRadius="{DynamicResource radius8}"
+                                                   BackgroundColor="{DynamicResource primaryColor}"
+                                                   IsClickable="True">
 
-                                <StackLayout Margin="8, 0" VerticalOptions="Center"
-                                             Spacing="0">
+                                <StackLayout Margin="8, 0"
+                                             VerticalOptions="Center"
+                                             Spacing="{DynamicResource spacing0}">
 
                                     <Label Text="Math"
                                            FontFamily="Font700"
-                                           FontSize="14"
-                                           TextColor="#ecf0f1"
+                                           FontSize="{DynamicResource fontSize14}"
+                                           TextColor="{DynamicResource whiteColor}"
                                            MaxLines="1"
                                            LineBreakMode="TailTruncation"/>
 
                                     <Label Text="8:00 - 8:40"
                                            FontFamily="Font400"
-                                           FontSize="14"
-                                           TextColor="#ecf0f1"/>
+                                           FontSize="{DynamicResource fontSize14}"
+                                           TextColor="{DynamicResource whiteColor}"/>
 
                                 </StackLayout>
-                                
-                            </Frame>
-                            
+
+                            </material:MaterialCard>
+
                         </StackLayout>
-                        
+
                     </DataTemplate>
-                    
+
                 </CollectionView.ItemTemplate>
-                
+
+                <CollectionView.Footer>
+
+                    <StackLayout Spacing="{DynamicResource spacing0}"
+                                 HeightRequest="{DynamicResource height80}"/>
+
+                </CollectionView.Footer>
+
             </CollectionView>
 
-            <Button ImageSource="ic_plus"
-                    HeightRequest="64"
-                    WidthRequest="64"
-                    CornerRadius="32"
-                    BackgroundColor="#3498db"
-                    HorizontalOptions="End"
-                    VerticalOptions="End"
-                    Margin="16"/>
+            <Grid RowSpacing="{DynamicResource spacing0}"
+                  ColumnSpacing="{DynamicResource spacing0}"
+                  HeightRequest="{DynamicResource height48}"
+                  BackgroundColor="{DynamicResource backgroundVariantColor}"
+                  Padding="16, 0"
+                  VerticalOptions="Start">
+
+                <Label Text="Monday"
+                       FontFamily="Font500"
+                       FontSize="{DynamicResource fontSize16}"
+                       TextColor="{DynamicResource titleColor}"
+                       LineBreakMode="TailTruncation"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"/>
+
+                <Label Text="April 2"
+                       FontFamily="Font700"
+                       FontSize="{DynamicResource fontSize14}"
+                       TextColor="{DynamicResource titleColor}"
+                       LineBreakMode="TailTruncation"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"/>
+
+            </Grid>
+
+            <material:MaterialButton ButtonType="Elevated"
+                                     ImageSource="ic_plus"
+                                     HeightRequest="{DynamicResource height64}"
+                                     WidthRequest="{DynamicResource height64}"
+                                     CornerRadius="{DynamicResource radius32}"
+                                     BackgroundColor="{DynamicResource primaryColor}"
+                                     TextColor="{DynamicResource whiteColor}"
+                                     PressedBackgroundColor="{DynamicResource primaryPressedColor}"
+                                     HorizontalOptions="End"
+                                     VerticalOptions="End"
+                                     Margin="16"
+                                     Command="{Binding AddLessonTapCommand}"/>
 
         </Grid>
         

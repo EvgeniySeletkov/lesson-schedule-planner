@@ -1,8 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LessonSchedulePlanner.App">
-    <Application.Resources>
+<prism:PrismApplication xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" 
+                        xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:styles="clr-namespace:LessonSchedulePlanner.Resources.Styles"
+                        x:Class="LessonSchedulePlanner.App">
 
-    </Application.Resources>
-</Application>
+    <prism:PrismApplication.Resources>
+
+        <styles:DefaultResources>
+
+            <styles:DefaultResources.MergedDictionaries>
+
+                <styles:LightModeResources />
+
+            </styles:DefaultResources.MergedDictionaries>
+
+        </styles:DefaultResources>
+
+    </prism:PrismApplication.Resources>
+    
+</prism:PrismApplication>
